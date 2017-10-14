@@ -50,10 +50,6 @@
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email">
                             </div>
-                            <div class="form-group">
-                                <label for="id">Unique ID</label>
-                                <input type="text" class="form-control" id="id">
-                            </div>
                         </form>
                         <br>
                         <button type="button" class="btn btn-info btn-lg" id="add-btn">
@@ -76,18 +72,18 @@
 
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
-            var newRes = {
+            var newReservation = {
                 customerName: $("#name").val().trim(),
                 phoneNumber: $("#phone").val().trim(),
                 customerEmail: $("#email").val().trim(),
                 customerID: $("#id").val().trim()
             };
 
-            $.post("/api/new", newRes)
-                .done(function (data) {
-                    console.log(data);
-                    alert("Adding reservation...");
-                });
+            $.post("/api/new", newReservation)
+            .done(function (data) {
+                console.log(data);
+                alert("Adding reservation...");
+            });
         });
     </script>
 </body>

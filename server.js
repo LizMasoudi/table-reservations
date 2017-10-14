@@ -15,37 +15,37 @@ var tables = [
         customerName: "Ned Stark",
         phoneNumber: "555-5552",
         customerEmail:"ned@housestark.com",
-        customerID:"Ned",
+        customerID:"ned",
     },
     {
         customerName: "Robb Stark",
         phoneNumber: "555-5552",
         customerEmail:"robb@housestark.com",
-        customerID:"Robb",
+        customerID:"robb",
     },
     {
         customerName: "Khal Drogo",
         phoneNumber: "555-5553",
         customerEmail:"greatkhal@dothraki.com",
-        customerID:"Drogo",
+        customerID:"drogo",
     },
     {
         customerName: "Danaerys Targaryean",
         phoneNumber: "555-5554",
         customerEmail:"danaerys@housetargaryean.com",
-        customerID:"Danaerys",
+        customerID:"danaerys",
     },
     {
         customerName: "Jon Snow",
         phoneNumber: "555-5555",
         customerEmail:"jon@kinginthenorth.com",
-        customerID:"Jon",
+        customerID:"jon",
     },
     {
         customerName: "Gendry",
         phoneNumber: "555-5556",
         customerEmail:"gendry@smiths.com",
-        customerID:"Gendry",
+        customerID:"gendry",
     }
 ];
 
@@ -69,13 +69,37 @@ app.get("/api/waitlist", function(req,res) {
     res.json(waitList);
 });
 
+// app.get("/api/:tables?", function(req, res) {
+//     var chosen = req.params.tables;
+//     if (chosen) {
+//       console.log(chosen);
+//       for (var i = 0; i < tables.length; i++) {
+//         if (chosen === tables[i].customerID) {
+//           return res.json(tables[i]);
+//         }
+//       }
+//       return res.json(false);
+//     }
+//     return res.json(tables);
+// });
+
 app.post("/api/new", function(req, res) {
-    var newRes = req.body;
-    newRes.routeName = newRes.name.replace(/\s+/g, "").toLowerCase();
-    console.log(newRes);
-    tables.push(newRes);
-    res.json(newRes);
-  });
+    var newReservation = req.body;
+    newReservation.customerID = newReservation.customerName.replace(/\s+/g, "").toLowerCase();
+    console.log(newReservation);
+    
+    if (tables.length < 7){
+
+        tables.push(newReservation);
+        res.json(newReservation);
+    }
+    else {
+        waitList.push(newReservation);
+        res.json(newReservation);
+    }
+
+
+});
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);

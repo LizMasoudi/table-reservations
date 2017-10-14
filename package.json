@@ -1,0 +1,25 @@
+{
+  "name": "table-reservations",
+  "version": "1.0.0",
+  "description": "a table reservation FullStack application",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizMasoudi/table-reservations.git"
+  },
+  "author": "LM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizMasoudi/table-reservations/issues"
+  },
+  "homepage": "https://github.com/LizMasoudi/table-reservations#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}

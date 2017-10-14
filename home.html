@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table Reservations Home</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="server.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Table Reservations</h1>
+            <h3>The easiest way to reserve a table!</h3>
+            <hr>
+            <a href="http://localhost:3000/view">
+                <button type="button" class="btn btn-warning btn-lg" id="view-btn">
+                    <span class="glyphicon glyphicon-eye-open"></span> View Tables</button>
+            </a>
+            <a href="http://localhost:3000/reservation">
+                <button type="button" class="btn btn-info btn-lg" id="add-btn">
+                    <span class="glyphicon glyphicon-plus"></span> Make a Reservation</button>
+            </a>
+        </div>
+        <div class="row">
+            <a href="http://localhost:3000/api/tables">
+                <button type="button" class="btn btn-link">API Table Link</button>
+            </a>
+            <a href="http://localhost:3000/api/waitlist">
+                <button type="button" class="btn btn-link">API Waitlist Link</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
